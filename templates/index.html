@@ -1,22 +1,47 @@
+{% extends 'wrapper.html' %}
 
+{% block title %}Home{% endblock %}
+
+
+
+{% block content %}
 
 <div align="center">
-
-    <h1>Create Vertical Video</h1>
-        <p>This app will create a Vertical Video for tik-tok and Youtube Shorts.</p> 
-    <div style="margin-top: 10px;">
-        Two Videos will be merged together to make this video.
-    </div>
+    <h1>Merge For Shorts</h1>
 </div>
  
 <hr>
 
-<div  style=" margin-top:100px; padding:10px;" align="center">
+<div   class="card card-body col-md-4 m-auto" >
 
     
-    <form action="" method="post" enctype="multipart/form-data">
-        <input type="file" name="video-1">
-        <input type="submit" value="Upload">
+    <form action="/uploadfile" method="post" enctype="multipart/form-data">
+        <div class="mb-2">
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+
+            {% if success %}
+                <div class="alert alert-success">{{ success }}</div>
+            {% endif %}
+
+
+             <div class="image-upload">
+              
+                <input id="file-input" name="file" type="file" accept="video/mp4" > 
+                
+              </div>
+    
+        </div>  
+            
+        <div class="d-grid gap-2">
+
+            <button type="submit" class="btn  btn-primary">
+                Create 
+            </button>
+        </div>
+    
     </form> 
 </div>
 
+{% endblock %}
