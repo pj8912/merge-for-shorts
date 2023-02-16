@@ -1,5 +1,5 @@
 # Merge For Shorts
-Creating horizontal fit videos using MoviePy 
+Creating Vertical fit videos using MoviePy 
 
 # Example
 - Check out this youtube video : https://www.youtube.com/shorts/vQst9hvQXKI
