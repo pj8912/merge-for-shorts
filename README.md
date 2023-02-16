@@ -1,6 +1,10 @@
 # Merge For Shorts
 Creating horizontal fit videos using MoviePy 
 
+# Example
+- Check out this youtube video : https://www.youtube.com/shorts/vQst9hvQXKI
+- `Family Guy` video at the top and `quake` video at the bottom
+
 # Requirements
 - This requires `python 3.x`
 
