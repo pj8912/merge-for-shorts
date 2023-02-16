@@ -1,6 +1,8 @@
 # Merge For Shorts
 Creating Vertical fit videos using MoviePy 
 
+Sepcial thanks to reddit user u/ximo23.
+
 # Example
 - Check out this youtube video : https://www.youtube.com/shorts/vQst9hvQXKI
 - `Family Guy` video at the top and `quake` video at the bottom
