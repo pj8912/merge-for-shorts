@@ -39,7 +39,7 @@ def upload():
         if clip1.duration > 60:
             clip1 = clip1.subclip(0,60) 
     
-        clip2 =   VideoFileClip("/home/jp/Videos/quake_short.mp4",audio=False)
+        clip2 =   VideoFileClip("uploads/quake_short.mp4",audio=False)
         if clip2.duration > clip1.duration:
             clip2 = clip2.subclip(0, clip1.duration)
 
