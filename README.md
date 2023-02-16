@@ -2,11 +2,10 @@
 Creating horizontal fit videos using MoviePy 
 
 # Requirements
-- To run this project, you will need to have Python 3 and Flask installed on your machine. You can install Flask by running the following command:
-``` pip install moviepy ```
- 
-- You will also need to install MoviePy and its dependencies. You can do this by running the following command:
-``` pip install moviepy ```
+- This requires `python 3.x`
+
+# Installation
+ - Install  dependencies :  `pip install -r requirements.txt`
 
 # Usage
 - To run the Flask application, you can use the following command:
