@@ -30,6 +30,9 @@ Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
 
 - You can configure the application by modifying the config dictionary in the `app.py` file. You can set the location and name of the folder where uploaded files will be saved, as well as the maximum allowed file size.
 
+## Contributers
+
+- [jp](https://github.com/pj8912)
 
 # License
 This project is licensed under the Apache License Version 2.0.
