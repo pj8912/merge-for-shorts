@@ -1,4 +1,8 @@
 # Merge For Shorts
+
+![py_shorts](https://user-images.githubusercontent.com/59218902/220019042-11662e84-01d3-4993-ae03-76274bd76a2c.jpg)
+
+
 Creating Vertical fit videos using MoviePy 
 
 Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
