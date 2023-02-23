@@ -47,7 +47,7 @@ python app.py
 # License
 This project is licensed under the Apache License Version 2.0.
 
-# Contributing
+# Contribution
 
  The goal of this app is to automate the process of making vertical `shorts` videos of a certain kind. Contributions are always welcome, no matter how large or small. Pull requests are always welcome, and I'll do my best to do reviews as fast as I can. 
 
