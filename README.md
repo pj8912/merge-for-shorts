@@ -23,12 +23,18 @@ Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
  - Install  dependencies :  `pip install -r requirements.txt`
 
 # Usage
+
 - To run the Flask application, you can use the following command:
-``` python app.py ```
+```
+python app.py 
+```
 
 - This will start the Flask development server and you can access the application by visiting http://localhost:5000 in your web browser.
 
-- The application allows users to upload MP4 video, add two transparent images at the top and bottom combined with another game video at the bottom which form of video, suitable for `youtube shorts` or `tik tok`
+- The format of the video is any movie or tv series clip at the top and random videogame or life hacks videos at the bottom.
+
+- The application allows users to upload an video file which sits at the top and video game at the bottom which is in the `uploads` folder - `quake_short.mp4` , where two of them are combined to form a single video file which is <= `1 minute`. If the video uploaded by the user is greater than a minute it will be reduced to a minute. The progress can be seen on the terminal.  
+
 
 # Configuration
 
@@ -40,6 +46,12 @@ Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
 
 # License
 This project is licensed under the Apache License Version 2.0.
+
+# Contribution
+ The goal of this app is to automate the process of making vertical shorts videos of certain kind  Contributions are always welcome, no matter how large or small. Pull requests are always welcome, and I'll do my best to do reviews as fast as I can. 
+
+In the case of a bug report, bugfix or a suggestions, please feel very free to open an issue too.
+
 
 
 
