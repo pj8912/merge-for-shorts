@@ -55,7 +55,7 @@ In the case of a bug report, bugfix or a suggestions, please feel very free to o
 
 
 
-# :heart: Support me by donating
+# :heart: :handshake: Support me by donating
 
 Hi there! If you've found my work helpful or useful in any way, please consider supporting me by donating. Your support helps me continue to create and share useful projects with the community. Thank you for your generosity and support! :handshake:
 
