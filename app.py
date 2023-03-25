@@ -1,14 +1,13 @@
-from flask import Flask, request, render_template, send_from_directory,jsonify
+from flask import Flask, request, render_template, send_from_directory,jsonify, redirect, url_for
 import os
 import datetime
 from moviepy.editor import *
 from moviepy.video.fx.all import *
 
-ts = datetime.datetime.now().timestamp()
+app = Flask(__name__,static_folder='static')
 
-app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "uploads"
-app.config["MEDIA_FOLDER"] = "media" #newly created videos
+app.config["MEDIA_FOLDER"] = "static" #newly created videos
 
 @app.route("/about")
 def about():
@@ -16,18 +15,15 @@ def about():
 
 @app.route("/")
 def index():
-    
-    
     folder_path = os.path.expanduser("./uploads/gameclips")
     filenames = [filename for filename in os.listdir(folder_path)
              if os.path.isfile(os.path.join(folder_path, filename))]
     
-    # for i in filenames:
-    #     parts = i.split('.')
-    #     video_name = parts[0]
-    #     # print(video_name)
-
-    return render_template("index.html", gameclips=filenames)
+    success_message = request.args.get('success')
+    video_filename = request.args.get('video')
+    
+    return render_template('index.html', gameclips=filenames, success=success_message, video=video_filename)
+    # return render_template("index.html", gameclips=filenames, testname=testname)
 
 @app.route('/uploadfile',   methods=["POST"])
 def upload():
@@ -35,31 +31,28 @@ def upload():
         if 'file' not in request.files:
             return render_template('index.html', error='No file selected.')
         file = request.files['file']
+        clip2name = request.form['secfiles']
 
         # No selected file
         if file.filename == '':
             return render_template('index.html', error='No file selected.')
-
-        # clip1 = VideoFileClip( os.path.join(request.files['file'].filename))
         filename = file.filename
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         clip1_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        clip1 = VideoFileClip(clip1_path)
-            
+        clip1 = VideoFileClip(clip1_path)    
         if clip1.duration > 60:
             clip1 = clip1.subclip(0,60) 
     
-        clip2 =   VideoFileClip("uploads/gameclips/quake_short.mp4",audio=False)
+        clip2= VideoFileClip("uploads/gameclips/"+clip2name)
         if clip2.duration > clip1.duration:
             clip2 = clip2.subclip(0, clip1.duration)
 
         tr1 = ImageClip("fondo.png").set_duration(clip1.duration).set_position(("center","top"))
-        # tr2 = ImageClip("fondo.png ").set_duration(clip1.duration).set_position(("center","bottom"))
+        tr2 = ImageClip("fondo.png").set_duration(clip1.duration).set_position(("center","bottom"))
 
         clip1 = clip1.crop(x1=506, y1 = 0, x2=0, y2 = 900)
-        clip2 = clip2.crop(x1=506, y1 = 0, x2=0, y2 = 900)
+        combine = clips_array([[tr1],[clip1],[clip2],[tr2]])
 
-        combine = clips_array([[tr1],[clip1],[clip2]])
         ts = datetime.datetime.now().timestamp()
         filename = str(ts)+".mp4"
 
@@ -67,17 +60,13 @@ def upload():
         temp_audio_path = os.path.join(app.config['MEDIA_FOLDER'], str(ts)+'.mp3')
         combine.write_videofile(output_path, temp_audiofile=temp_audio_path)
         combine.close()
+        # return render_template('index.html', success='Video '+filename+' created', video=filename)
+        success_message = f'Video {filename} created'
+        return redirect(url_for('index', success=success_message, video=filename))
 
-        # combine.write_videofile(filename)
-        # combine.close()
-
-        # return 'File uploaded successfully!', 200
-        return render_template('index.html', success='Video '+filename+' created')
-
-    # File is not an MP4 file
         # return render_template('index.html', error='Invalid file format. Please upload an MP4 file.')
 
-    return render_template('index.html', error='Invalid request')
+    return redirect(url_for('index', error='Invalid request'))
 
 
 if __name__ ==  "__main__":

@@ -1,10 +1,46 @@
+{% extends 'wrapper.html' %}
+{% block title %}Merge For Shorts{% endblock %}
+{% block content %}
 
-<h1>
-<a href="/"> Merge For Shorts </a>
-</h1>
+<div class="container text-center">
 
-- The format of the video is any movie or tv series clip at the top and random videogame or life hacks videos at the bottom.
-<br>
-- The application allows users to upload an video file which sits at the top and video game at the bottom which is in the uploads folder - quake_short.mp4 , where two of them are combined to form a single video file which is <= 1 minute. 
-<br>
-- If the video uploaded by the user is greater than a minute it will be reduced to a minute. The progress can be seen on the terminal.
+    <h1 class="mt-5">
+        <a href="/" style="text-decoration:none"> Merge For Shorts </a>
+    </h1>
+</div>
+    
+
+<ul style="list-style: none;" class="mt-5 list-group p-5">
+    <li  class="list-group-item" style="cursor: pointer;">
+         The format of the video is any movie or tv series clip at the top and random videogame or life hacks videos at the bottom.
+
+    </li>
+    <li class="list-group-item" style="cursor: pointer;">
+        The application allows users to upload an video file which sits at the top and video game at the bottom which is in the uploads folder - quake_short.mp4 , where two of them are combined to form a single video file which is <= 1 minute. 
+
+    </li>
+    <li class="list-group-item" style="cursor: pointer;">
+        If the video uploaded by the user is greater than a minute it will be reduced to a minute. The progress can be seen on the terminal.
+
+    </li>
+</ul>
+
+<script>
+    var listItems = document.querySelectorAll('.list-group-item');
+
+    for (var i = 0; i < listItems.length; i++) {
+      listItems[i].addEventListener('mouseover', function() {
+        this.classList.add('active');
+      });
+
+      listItems[i].addEventListener('mouseout', function() {
+        this.classList.remove('active');
+      });
+    }
+  </script>
+
+
+
+
+
+{% endblock %}
