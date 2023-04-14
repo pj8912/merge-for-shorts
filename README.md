@@ -14,7 +14,7 @@ Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
 - Check out this [Youtube](https://www.youtube.com/shorts/vQst9hvQXKI) video
 - `Family Guy` video at the top and `quake` video at the bottom
 
- ![Imgur](https://imgur.com/gallery/VY3lxVM)
+![Screenshot from 2023-04-14 19-15-10](https://user-images.githubusercontent.com/59218902/232066774-dfbfb600-8e30-4b69-8aaa-a3db29af027c.png)
 
 
 # Requirements
