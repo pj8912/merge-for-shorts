@@ -14,7 +14,7 @@ Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
 - Check out this youtube video : https://www.youtube.com/shorts/vQst9hvQXKI
 - `Family Guy` video at the top and `quake` video at the bottom
 
-![Imgur Image](https://imgur.com/PUdsAeV)
+![Imgur Image](https://imgur.com/a/VY3lxVM)
 
 # Requirements
 - This requires `python 3.x`
