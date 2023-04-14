@@ -46,11 +46,25 @@ def upload():
         clip2= VideoFileClip("uploads/gameclips/"+clip2name)
         if clip2.duration > clip1.duration:
             clip2 = clip2.subclip(0, clip1.duration)
+        
+        # Double the width of the clip
+        # Resize the clip to the new size while maintaining the aspect ratio
 
         tr1 = ImageClip("fondo.png").set_duration(clip1.duration).set_position(("center","top"))
         tr2 = ImageClip("fondo.png").set_duration(clip1.duration).set_position(("center","bottom"))
 
-        clip1 = clip1.crop(x1=506, y1 = 0, x2=0, y2 = 900)
+        # clip1 = clip1.crop(x1=506, y1 = 0, x2=0, y2 = 900)
+        wx = clip1.w
+        new_w = 2 * wx
+        clip1 = clip1.resize(width=new_w)
+
+        w = clip2.w 
+        new_w = 3 * w
+        clip2 = clip2.resize(width=new_w)
+        w, h = clip2.size
+        new_h = h * 1.5
+        clip2 = clip2.resize(height=new_h)
+
         combine = clips_array([[tr1],[clip1],[clip2],[tr2]])
 
         ts = datetime.datetime.now().timestamp()
