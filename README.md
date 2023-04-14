@@ -11,10 +11,11 @@ Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
  - Install  dependencies :  `pip install -r requirements.txt`
 
 ## Example
-- Check out this youtube video : https://www.youtube.com/shorts/vQst9hvQXKI
+- Check out this [Youtube](https://www.youtube.com/shorts/vQst9hvQXKI) video
 - `Family Guy` video at the top and `quake` video at the bottom
 
-<img src='https://imgur.com/a/VY3lxVM'>
+[Imgur](https://imgur.com/gallery/VY3lxVM)
+
 
 # Requirements
 - This requires `python 3.x`
