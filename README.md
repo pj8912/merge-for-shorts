@@ -7,20 +7,17 @@ Creating Vertical fit videos using MoviePy
 
 Sepcial thanks to reddit user [u/ximo23](https://www.reddit.com/user/ximo23).
 
+# Installation
+ - Install  dependencies :  `pip install -r requirements.txt`
+
 ## Example
 - Check out this youtube video : https://www.youtube.com/shorts/vQst9hvQXKI
 - `Family Guy` video at the top and `quake` video at the bottom
 
-## screenshot
-
-![Screenshot from 2023-02-17 08-45-19](https://user-images.githubusercontent.com/59218902/219540734-ae55d412-5374-4cb9-9199-e2b3be4a20ca.png)
-
+![Imgur Image](https://imgur.com/PUdsAeV)
 
 # Requirements
 - This requires `python 3.x`
-
-# Installation
- - Install  dependencies :  `pip install -r requirements.txt`
 
 # Usage
 
