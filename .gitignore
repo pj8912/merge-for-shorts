@@ -131,3 +131,4 @@ dmypy.json
 
 #.mp4 file
 *.mp4
+myenv/
