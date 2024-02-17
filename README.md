@@ -3,6 +3,11 @@
 ![py_shorts](https://user-images.githubusercontent.com/59218902/220019042-11662e84-01d3-4993-ae03-76274bd76a2c.jpg)
 
 
+
+## Support
+<a href="https://www.buymeacoffee.com/gjohnpinto" target="_blank" align="center"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 100px !important;width: 300px !important;" ></a>
+
+
 ## Functionalities
 - Crop a video to shorts format
 - Merge videos for shorts
@@ -55,10 +60,6 @@ python app.py
 #### other  example
 - Check out this [Youtube](https://www.youtube.com/shorts/vQst9hvQXKI) video
 - `Family Guy` video at the top and `quake` video at the bottom
-
-
-## Support
-<a href="https://www.buymeacoffee.com/gjohnpinto" target="_blank" align="center"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 200px !important;" ></a>
 
 
 ## Configuration
