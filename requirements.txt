@@ -12,7 +12,7 @@ Jinja2
 MarkupSafe  
 moviepy  
 numpy  
-Pillow  
+Pillow==8.4.0
 proglog  
 pygame  
 requests  

@@ -22,7 +22,7 @@ app.config["MEDIA_FOLDER"] = "static" #newly created videos
 def about():
     return render_template('about.html')
 
-@app.route('/merge')
+@app.route('/merge', endpoint='merge')
 def merge_page():
     folder_path = os.path.expanduser("./uploads/gameclips")
     filenames = [filename for filename in os.listdir(folder_path)
@@ -32,10 +32,9 @@ def merge_page():
     video_filename = request.args.get('video')
     
     return render_template('merge.html', gameclips=filenames, success=success_message, video=video_filename)
-    # return render_template('merge.html')
 
 
-@app.route("/")
+@app.route("/", endpoint='index')
 def index():
     folder_path = os.path.expanduser("./uploads/gameclips")
     filenames = [filename for filename in os.listdir(folder_path)
@@ -45,7 +44,6 @@ def index():
     video_filename = request.args.get('video')
     
     return render_template('index.html', gameclips=filenames, success=success_message, video=video_filename)
-    # return render_template("index.html", gameclips=filenames, testname=testname)
 
 
 
@@ -143,7 +141,7 @@ def crop_to_shorts():
         cropped_clip = crop(clip, width=500, height=5000, x_center=w/1.5, y_center=h/1.5)
         cropped_clip.write_videofile(output_path,codec="libx264",temp_audiofile=temp_audio_path)
         success_message = f'Video {filename} created'
-        return redirect(url_for('merge', success=success_message, video=filename))
+        return redirect(url_for('index', success=success_message, video=filename))
     return redirect(url_for('shorts_page', error='Invalid request'))
 
 

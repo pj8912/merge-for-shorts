@@ -31,6 +31,28 @@
 
 
 <div class="mt-5">
+
+    <div class="mb-2 w-25 m-auto">
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        {% if success %}
+        <div class="alert alert-success" id="success-msg">
+            {{ success }}
+            <span aria-hidden="true" style="margin-left: 109px;cursor: pointer;" onclick="hideText()">&times;</span>
+        </div>
+
+        <script>
+            function hideText() {
+                var myDiv = document.getElementById('success-msg');
+                myDiv.style.display = 'none';
+            }
+        </script>
+
+        {% endif %}
+    </div>
+
     <h3 class="text-center">Short-n-Merge</h3>
     <div class="centerFlex">
         <a href="/shorts" class="btn btn-sm btn-primary" style="width: fit-content;">Crop to Shorts</a>
