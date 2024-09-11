@@ -4,8 +4,8 @@
 
 
 
-## Support
-If you like the project please do consider supporting me! 
+## 🤝 Support
+If you like the project please do consider supporting me 🙏 
 
 <br>
 
@@ -15,7 +15,7 @@ If you like the project please do consider supporting me!
 
 
 
-## Functionalities
+## ⚙️ Functionalities
 - Crop a video to shorts format
 - Merge videos for shorts
 
@@ -26,7 +26,7 @@ If you like the project please do consider supporting me!
 ## Requirements
 - This requires `python 3.9` or higher versions
 
-## Installation
+## ⬇️ Installation
 
  - Clone repo 
  ```
@@ -39,7 +39,7 @@ If you like the project please do consider supporting me!
  pip install -r requirements.txt
  ```
 
-## Start 
+## 🏃 Start 
 
 - To run the Flask application, you can use the following command:
 ```
@@ -53,6 +53,9 @@ python app.py
 - The format of the video is any movie or tv series clip at the top and random videogame or life hacks videos at the bottom.
 
 - The application allows users to upload an video file which sits at the top and video game at the bottom which is in the `uploads` folder - `quake_short.mp4` , where two of them are combined to form a single video file which is <= `1 minute`. If the video uploaded by the user is greater than a minute it will be reduced to a minute. The progress can be seen on the terminal.  
+
+
+## 📸 Screenshots
 
 ### Home
 ![Home](image-1.png)
