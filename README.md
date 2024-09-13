@@ -11,7 +11,7 @@ If you like the project please do consider supporting me 🙏
 
 <a href='https://ko-fi.com/S6S3UJ4NY' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-<a href="https://www.buymeacoffee.com/gjohnpinto" target="_blank" align="center"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 150px !important;" ></a>
+<a href="https://www.buymeacoffee.com/scenestamps" target="_blank" align="center"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 150px !important;" ></a>
 
 
 
