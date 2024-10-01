@@ -56,9 +56,6 @@ python app.py
 
 ## 📸 Screenshots
 
-### Home
-![Home](image-1.png)
-
 ### Crop to shorts
 ![Alt text](image-2.png)
 
