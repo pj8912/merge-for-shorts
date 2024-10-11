@@ -28,12 +28,7 @@
                             onclick="hideText()">&times;</span>
                     </div>
 
-                    <script>
-                        function hideText() {
-                            var myDiv = document.getElementById('success-msg');
-                            myDiv.style.display = 'none';
-                        }
-                    </script>
+                    <script src="{{url_for('static', filename='main.js')}}"></script>
 
                     {% endif %}
 

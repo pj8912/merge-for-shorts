@@ -17,22 +17,19 @@
     <h3>Crop video to Shorts format</h3>
     <form action="/croptoshorts" method="POST" enctype="multipart/form-data">
         <div class="mb-2">
+            <!-- error message -->
             {% if error %}
             <div class="alert alert-danger">{{ error }}</div>
             {% endif %}
 
+            <!-- success message -->
             {% if success %}
             <div class="alert alert-success" id="success-msg">
                 {{ success }}
                 <span aria-hidden="true" style="margin-left: 109px;cursor: pointer;" onclick="hideText()">&times;</span>
             </div>
 
-            <script>
-                function hideText() {
-                    var myDiv = document.getElementById('success-msg');
-                    myDiv.style.display = 'none';
-                }
-            </script>
+            <script src="{{url_for('static', filename='main.js')}}"></script>
 
             {% endif %}
         </div>
@@ -46,5 +43,13 @@
     </form>
 </div>
 
+
+{% if success %}
+        <div class="card card-body col-md-4 m-auto mt-4">
+            <video controls>
+                <source src="{{ url_for('static', filename=video) }}" type="video/mp4">
+            </video>
+        </div>
+{% endif %}
 
 {%endblock%}

@@ -33,7 +33,7 @@ def merge_page():
     
     return render_template('merge.html', gameclips=filenames, success=success_message, video=video_filename)
 
-
+# home page
 @app.route("/", endpoint='index')
 def index():
     folder_path = os.path.expanduser("./uploads/gameclips")
@@ -102,10 +102,12 @@ def altmerge():
         return redirect(url_for('index', success=success_message, video=filename))
     return redirect(url_for('index', error='Invalid request'))
 
-
+# shorts page
 @app.route('/shorts')
 def shorts_page():
-    return render_template('crop.html')
+    success_message = request.args.get('success')
+    video_filename = request.args.get('video')
+    return render_template('crop.html', success=success_message, video=video_filename)
 
  
 #first function 
@@ -115,7 +117,8 @@ def crop_to_shorts():
         if 'file' not in request.files:
             return render_template('index.html', error='No file selected.')
         file = request.files['file']
-        # No selected file
+        
+        # No  file selected
         if file.filename == '':
             return render_template('index.html', error='No file selected.')
         filename = file.filename
@@ -123,26 +126,34 @@ def crop_to_shorts():
         clip1_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
 
-        
+        # creating new filename
         ts = datetime.datetime.now().timestamp()
         filename = str(ts)+".mp4"
         filename="crop_short_"+filename
         output_path = os.path.join(app.config['MEDIA_FOLDER'], filename)
-        temp_audio_path = os.path.join(app.config['MEDIA_FOLDER'], str(ts)+'.mp3')
+
+        # ffmpeg command line [NEW]
+        os.system(f'ffmpeg -i {clip1_path} -filter:v "crop=in_h*9/16:in_h" -c:a copy {output_path}')
+     
+        # moviepy [old]
+
+        # temp_audio_path = os.path.join(app.config['MEDIA_FOLDER'], str(ts)+'.mp3')
         
-        clip = VideoFileClip(clip1_path)
-        # clip for 10 sec
-        if clip.duration > 10:
-            clip = clip.subclip(0,10)
-        (w, h) = clip.size
-        if w != 1920 and h !=1080:
-            clip = clip.resize(width=1920,height=1080)
-        bar = tqdm(total=clip.duration)
-        cropped_clip = crop(clip, width=500, height=5000, x_center=w/1.5, y_center=h/1.5)
-        cropped_clip.write_videofile(output_path,codec="libx264",temp_audiofile=temp_audio_path)
+        # clip = VideoFileClip(clip1_path)
+        # # clip for 10 sec
+        # if clip.duration > 10:
+        #     clip = clip.subclip(0,10)
+        # (w, h) = clip.size
+        # if w != 1920 and h !=1080:
+        #     clip = clip.resize(width=1920,height=1080)
+        # bar = tqdm(total=clip.duration)
+        # cropped_clip = crop(clip, width=500, height=5000, x_center=w/1.5, y_center=h/1.5)
+        # cropped_clip.write_videofile(output_path,codec="libx264",temp_audiofile=temp_audio_path)
+        
         success_message = f'Video {filename} created'
-        return redirect(url_for('index', success=success_message, video=filename))
-    return redirect(url_for('shorts_page', error='Invalid request'))
+        return redirect(url_for('shorts_page', success=success_message, video=filename))
+    else:
+        return redirect(url_for('shorts_page', error='Invalid request'))
 
 
 
